@@ -65,7 +65,7 @@ class BankAccount {
                 this.balance -= amount;
                 return "Thank you for banking with us";
             }
-            return 'balance :' + this.balance;
+            return 'balance: ' + this.balance;
         } else {
             return "Add a valid amount";
         }
@@ -85,11 +85,12 @@ class AtmCard extends BankAccount {
 
     credit(amount) {
         super.deposit(amount);
-        return "your current balance is " + super.balance;
+        return 'Your account has been credited, balance ' + super.checkBalance();
     }
 
     debit(amount) {
         super.withdraw(amount);
+        return 'balance: ' +  super.checkBalance();
     }
 
 }

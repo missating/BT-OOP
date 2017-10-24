@@ -71,6 +71,12 @@ describe('Test for BankAccount and AtmCard classes', () => {
         it('Should return an object after successful deposit', () => {
             expect(vanessa.deposit(200)).to.be.an('object');
         });
+        it('Should return account balance after successful credit', () => {
+            expect(vanessa.credit(1000)).to.equal('Your account has been credited, balance 1200');
+        });
+        it('Should return account balance after successful debit', () => {
+            expect(vanessa.debit(200)).to.equal("balance: 1000");
+        });
         it('Should be an instance of AtmCard and BankAccount', () => {
             expect(vanessa).to.be.an.instanceOf(AtmCard, BankAccount);
         });
